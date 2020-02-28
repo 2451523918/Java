@@ -1,0 +1,43 @@
+import java.math.*;
+import java.util.*;
+public class test5 {
+	public static void main(String[] args) {
+		int i=(int)(100*Math.random());//系统产生的随机数
+		int h=0;//猜测的次数
+		Scanner scanner=new Scanner(System.in);
+		System.out.print("请输入猜测的最大次数：");
+		int N=scanner.nextInt();
+		System.out.print("请输入你猜测的数字：");
+		int num=scanner.nextInt();//num是用户猜测的数
+		System.out.println("系统随机数为："+i);
+		if(num<0) {
+			System.out.println("Game over");
+			return;
+		}else {
+		 if(num>i) {
+			System.out.println("Too big");
+			h++;
+		}else if(num<i) {
+			System.out.println("Too small");
+			h++;
+		}else if(num==i) {
+			h++;
+			System.out.println("游戏结束");
+			
+		}
+		}
+		if(num==i) {
+		if(h==1) {
+			System.out.println("Bingo!");
+		}else if(h<=3) {
+			System.out.println("Lucky you!");
+		}else if(h<=N) {
+			System.out.println("Good Guess!");
+		}else if(h>N) {
+			System.out.println("Game over");
+		}
+		return;
+	}
+	}
+
+}
